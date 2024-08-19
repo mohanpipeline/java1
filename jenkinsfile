@@ -1,0 +1,12 @@
+pipeline{ 
+    agent any 
+    tools{
+        maven 'local_maven'
+    }
+
+    stages("git checkout code"){
+        git branch: 'main',url:'https://github.com/mohansourcecode/java1.git'
+    }
+
+
+}
