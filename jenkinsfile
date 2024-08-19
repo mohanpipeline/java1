@@ -7,34 +7,34 @@ pipeline{
     
             }
         }
-        stage("another way to clone the repo "){ 
-            steps{
-            sh 'git clone https://github.com/mohansourcecode/java1.git'
-            }
-        }
-        stage("another way to clone"){
-            steps{
-                checkout([$class: 'GitSCM', 
-                    branches: [[name: '*/main']],
-                    userRemoteConfigs: [[url: 'https://github.com/mohansourcecode/java1.git']]
-                ])
+        // stage("another way to clone the repo "){ 
+        //     steps{
+        //     sh 'git clone https://github.com/mohansourcecode/java1.git'
+        //     }
+        // }
+        // stage("another way to clone"){
+        //     steps{
+        //         checkout([$class: 'GitSCM', 
+        //             branches: [[name: '*/main']],
+        //             userRemoteConfigs: [[url: 'https://github.com/mohansourcecode/java1.git']]
+        //         ])
 
-            }
+        //     }
 
 
-        }
-        stage("another way to clone the github for private"){
-            steps{
-                 checkout([$class: 'GitSCM',
-                    branches: [[name: '*/main']],
-                    userRemoteConfigs: [[
-                        url: 'git@github.com:your-repo.git',
-                        credentialsId: 'your-ssh-credentials-id'
-                    ]]
-                 ])
+        // }
+        // stage("another way to clone the github for private"){
+        //     steps{
+        //          checkout([$class: 'GitSCM',
+        //             branches: [[name: '*/main']],
+        //             userRemoteConfigs: [[
+        //                 url: 'git@github.com:your-repo.git',
+        //                 credentialsId: 'your-ssh-credentials-id'
+        //             ]]
+        //          ])
                 
-            }
-        }
+        //     }
+        // }
         stage("performing the buidl stage"){
             steps{
                 sh'ls -l'
