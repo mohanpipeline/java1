@@ -42,8 +42,8 @@ pipeline{
         }
         stage("performing the maven build and test"){
             steps{
-                sh 'mvn clean install'
-            }
+                sh 'mvn install'
+
         }
         stage("dus"){
             steps{
