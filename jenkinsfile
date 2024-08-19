@@ -45,6 +45,11 @@ pipeline{
                 sh 'mvn clean install'
             }
         }
+        stage("dus"){
+            steps{
+                sh ' ls -l'
+            }
+        }
     }
 
 }
