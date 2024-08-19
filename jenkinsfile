@@ -4,6 +4,7 @@ pipeline{
         stage("clonign the coee"){
             steps{
             git branch: 'main',url:'https://github.com/mohansourcecode/java1.git'
+            ls -l
             }
         }
         stage("another way to clone the repo "){ 
