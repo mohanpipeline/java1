@@ -1,8 +1,5 @@
 pipeline{ 
     agent any 
-    tools {
-        maven 'Maven 3.9.9'
-    }
     stages{
         stage("clonign the coee"){
             steps{
@@ -45,7 +42,7 @@ pipeline{
         }
         stage("performing the maven build and test"){
             steps{
-                sh 'Maven compile'
+                sh 'mvn clean install'
             }
         }
     }
